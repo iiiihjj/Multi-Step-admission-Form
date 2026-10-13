@@ -1,0 +1,215 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: #b5e699;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.progress-container {
+    height: 8px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 33.33%;
+    background: #007bff;
+    transition: width 0.4s ease;
+}
+
+.step-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 30px;
+}
+
+.step-number {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.step-number.active {
+    background: #007bff;
+    color: white;
+}
+
+.form-step {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-step h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.prev-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.prev-btn:hover {
+    background: #565e64;
+}
+
+.next-btn,
+.submit-btn {
+    background: #007bff;
+    color: white;
+    margin-left: auto;
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.summary {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.summary p {
+    margin-bottom: 14px;
+    color: #444;
+    overflow-wrap: anywhere;
+}
+
+.summary p:last-child {
+    margin-bottom: 0;
+}
+
+.review-message {
+    color: #666;
+    margin-top: 18px;
+    line-height: 1.5;
+}
+
+.success-message {
+    text-align: center;
+    color: #198754;
+    padding: 20px 0;
+}
+
+.success-message p {
+    margin-top: 12px;
+    color: #555;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 11px 15px;
+    }
+}
